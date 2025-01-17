@@ -14,7 +14,7 @@ const TopNavBar = () => {
 
   return (
     <div style={styles.navbar}>
-      <div style={styles.logo}>Egan Air Dispatch</div>
+      <div style={styles.logo}>Egan Air (Louisville -SDF)</div>
       <div style={styles.dateTime}>
         {currentTime.toLocaleDateString()} {currentTime.toLocaleTimeString()}
       </div>
