@@ -17,7 +17,7 @@ const MapTile = () => {
   return (
     <div style={styles.tile}>
       <h3>Interactive Map</h3>
-      <LoadScript googleMapsApiKey="AIzaSyBTJjrGxv5o7riwP977WffpyJMmJbg8LSg">
+      <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
         <GoogleMap
           mapContainerStyle={containerStyle}
           center={center}

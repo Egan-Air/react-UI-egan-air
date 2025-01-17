@@ -31,6 +31,7 @@ const DeparturesTile = () => {
               minute: '2-digit',
             }),
             destination: flight.destination,
+            status: flight.status,
           }));
         setDepartures(transformedData);
       } catch (err) {
@@ -52,7 +53,7 @@ const DeparturesTile = () => {
         <ul>
           {departures.map((departure) => (
             <li key={departure.id}>
-              Flight {departure.flight} to {departure.destination} - {departure.time}
+              Flight {departure.flight} to {departure.destination} - {departure.time} - {departure.status}
             </li>
           ))}
         </ul>
