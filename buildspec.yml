@@ -9,12 +9,11 @@ phases:
     commands:
       - echo Building the Docker image...
       - docker build -t react-egan-air-ui .
-      - docker tag react-egan-air-ui:latest 727796463450.dkr.ecr.us-east-1.amazonaws.com/react-egan-air:latest
+      - docker tag react-egan-air-ui:latest 727796463450.dkr.ecr.us-east-1.amazonaws.com/react-egan-air-ui:latest
   post_build:
     commands:
       - echo Pushing the Docker image to Amazon ECR...
-      - docker push 727796463450.dkr.ecr.us-east-1.amazonaws.com/react-egan-air:latest
-
+      - docker push 727796463450.dkr.ecr.us-east-1.amazonaws.com/react-egan-air-ui:latest
 artifacts:
   files:
     - "**/*"
