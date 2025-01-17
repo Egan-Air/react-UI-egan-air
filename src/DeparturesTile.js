@@ -1,22 +1,58 @@
 // DeparturesTile.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const DeparturesTile = () => {
-  const departures = [
-    { id: 1, flight: 'DL789', time: '14:30' },
-    { id: 2, flight: 'UA101', time: '15:00' },
-  ];
+  const [departures, setDepartures] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Replace with your actual REST API endpoint
+  const apiEndpoint = 'http://localhost:8081/flights';
+
+  useEffect(() => {
+    const fetchDepartures = async () => {
+      try {
+        const response = await fetch(apiEndpoint);
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+
+        // Transform the data for easier rendering
+        const transformedData = data.map((flight, index) => ({
+          id: index,
+          flight: flight.flight_id,
+          time: new Date(flight.departure_time).toLocaleTimeString([], {
+            hour: '2-digit',
+            minute: '2-digit',
+          }),
+          destination: flight.destination,
+        }));
+        setDepartures(transformedData);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchDepartures();
+  }, []);
 
   return (
     <div style={styles.tile}>
       <h3>Upcoming Departures</h3>
-      <ul>
-        {departures.map((departure) => (
-          <li key={departure.id}>
-            {departure.flight} - {departure.time}
-          </li>
-        ))}
-      </ul>
+      {loading && <p>Loading...</p>}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {!loading && !error && (
+        <ul>
+          {departures.map((departure) => (
+            <li key={departure.id}>
+              Flight {departure.flight} to {departure.destination} - {departure.time}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
