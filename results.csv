@@ -1,0 +1,8 @@
+"flight_id","departure_time","destination","origin","status","Status"
+"EA07","2025-01-17T14:05:06Z","PHX","SDF","Scheduled",""
+"EA06","2025-01-17T13:05:05Z","JFK","SDF","Scheduled","On Time"
+"EA02","2025-01-17T09:05:01Z","HNL","SDF","Scheduled",""
+"EA04","2025-01-17T20:05:03Z","SEA","SDF","Scheduled",""
+"EA01","2025-01-17T21:05:00Z","DEN","SDF","Scheduled",""
+"EA03","2025-01-17T10:05:02Z","SAN","SDF","Scheduled",""
+"EA05","2025-01-17T12:05:04Z","EWR","SDF","Scheduled",""

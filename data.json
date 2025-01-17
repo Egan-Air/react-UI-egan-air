@@ -1,0 +1,172 @@
+{
+  "FlightSchedules": [
+    {
+      "PutRequest": {
+        "Item": {
+          "flight_id": {
+            "S": "EA07"
+          },
+          "departure_time": {
+            "S": "2025-01-17T14:05:06Z"
+          },
+          "destination": {
+            "S": "PHX"
+          },
+          "origin": {
+            "S": "SDF"
+          },
+          "status": {
+            "S": "Scheduled"
+          },
+          "Status": {
+            "S": ""
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "flight_id": {
+            "S": "EA06"
+          },
+          "departure_time": {
+            "S": "2025-01-17T13:05:05Z"
+          },
+          "destination": {
+            "S": "JFK"
+          },
+          "origin": {
+            "S": "SDF"
+          },
+          "status": {
+            "S": "Scheduled"
+          },
+          "Status": {
+            "S": "On Time"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "flight_id": {
+            "S": "EA02"
+          },
+          "departure_time": {
+            "S": "2025-01-17T09:05:01Z"
+          },
+          "destination": {
+            "S": "HNL"
+          },
+          "origin": {
+            "S": "SDF"
+          },
+          "status": {
+            "S": "Scheduled"
+          },
+          "Status": {
+            "S": ""
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "flight_id": {
+            "S": "EA04"
+          },
+          "departure_time": {
+            "S": "2025-01-17T20:05:03Z"
+          },
+          "destination": {
+            "S": "SEA"
+          },
+          "origin": {
+            "S": "SDF"
+          },
+          "status": {
+            "S": "Scheduled"
+          },
+          "Status": {
+            "S": ""
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "flight_id": {
+            "S": "EA01"
+          },
+          "departure_time": {
+            "S": "2025-01-17T21:05:00Z"
+          },
+          "destination": {
+            "S": "DEN"
+          },
+          "origin": {
+            "S": "SDF"
+          },
+          "status": {
+            "S": "Scheduled"
+          },
+          "Status": {
+            "S": ""
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "flight_id": {
+            "S": "EA03"
+          },
+          "departure_time": {
+            "S": "2025-01-17T10:05:02Z"
+          },
+          "destination": {
+            "S": "SAN"
+          },
+          "origin": {
+            "S": "SDF"
+          },
+          "status": {
+            "S": "Scheduled"
+          },
+          "Status": {
+            "S": ""
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "flight_id": {
+            "S": "EA05"
+          },
+          "departure_time": {
+            "S": "2025-01-17T12:05:04Z"
+          },
+          "destination": {
+            "S": "EWR"
+          },
+          "origin": {
+            "S": "SDF"
+          },
+          "status": {
+            "S": "Scheduled"
+          },
+          "Status": {
+            "S": ""
+          }
+        }
+      }
+    }
+  ]
+}

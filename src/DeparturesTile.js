@@ -1,4 +1,3 @@
-// DeparturesTile.js
 import React, { useState, useEffect } from 'react';
 
 const DeparturesTile = () => {
@@ -18,16 +17,21 @@ const DeparturesTile = () => {
         }
         const data = await response.json();
 
+        // Get the current time
+        const currentTime = new Date();
+
         // Transform the data for easier rendering
-        const transformedData = data.map((flight, index) => ({
-          id: index,
-          flight: flight.flight_id,
-          time: new Date(flight.departure_time).toLocaleTimeString([], {
-            hour: '2-digit',
-            minute: '2-digit',
-          }),
-          destination: flight.destination,
-        }));
+        const transformedData = data
+          .filter((flight) => new Date(flight.departure_time) > currentTime) // Filter future departures
+          .map((flight, index) => ({
+            id: index,
+            flight: flight.flight_id,
+            time: new Date(flight.departure_time).toLocaleTimeString([], {
+              hour: '2-digit',
+              minute: '2-digit',
+            }),
+            destination: flight.destination,
+          }));
         setDepartures(transformedData);
       } catch (err) {
         setError(err.message);
@@ -41,7 +45,7 @@ const DeparturesTile = () => {
 
   return (
     <div style={styles.tile}>
-      <h3>Upcoming Departures</h3>
+      <h3>Upcoming SDF Departures</h3>
       {loading && <p>Loading...</p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}
       {!loading && !error && (
