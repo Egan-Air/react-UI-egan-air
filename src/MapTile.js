@@ -1,6 +1,8 @@
 import React from 'react';
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
 
+const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+
 const MapTile = () => {
   // Map container styles
   const containerStyle = {
@@ -17,7 +19,7 @@ const MapTile = () => {
   return (
     <div style={styles.tile}>
       <h3>Interactive Map</h3>
-      <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
+      <LoadScript googleMapsApiKey={apiKey}>
         <GoogleMap
           mapContainerStyle={containerStyle}
           center={center}

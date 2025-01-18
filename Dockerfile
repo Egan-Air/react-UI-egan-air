@@ -13,5 +13,6 @@ COPY --from=build /app/build /usr/share/nginx/html
 # Expose the port on which Nginx runs
 EXPOSE 80
 
+ENV REACT_APP_GOOGLE_MAPS_API_KEY=${REACT_APP_GOOGLE_MAPS_API_KEY}
 # Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
