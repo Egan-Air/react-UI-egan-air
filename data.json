@@ -1,19 +1,16 @@
 {
-  "FlightSchedules": [
+  "ArrivingFlights": [
     {
       "PutRequest": {
         "Item": {
           "flight_id": {
             "S": "EA06"
           },
-          "departure_time": {
-            "S": "2025-01-17T23:58:05Z"
-          },
-          "destination": {
-            "S": "JFK"
+          "arrival_time": {
+            "S": "2025-01-18T23:58:05Z"
           },
           "origin": {
-            "S": "SDF"
+            "S": "JFK"
           },
           "status": {
             "S": "Delayed"
@@ -27,14 +24,11 @@
           "flight_id": {
             "S": "EA02"
           },
-          "departure_time": {
-            "S": "2025-01-17T23:31:01Z"
-          },
-          "destination": {
-            "S": "BNA"
+          "arrival_time": {
+            "S": "2025-01-18T23:31:01Z"
           },
           "origin": {
-            "S": "SDF"
+            "S": "BNA"
           },
           "status": {
             "S": "On-time"

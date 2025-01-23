@@ -6,7 +6,7 @@ csv_file = 'results.csv'
 json_file = 'data.json'
 
 # Table name
-table_name = 'FlightSchedules'
+table_name = 'ArrivingFlights'
 
 # Convert CSV to DynamoDB JSON format
 with open(csv_file, 'r') as csvfile, open(json_file, 'w') as jsonfile:

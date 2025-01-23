@@ -1,0 +1,20 @@
+{
+    "TableName": "InFlight",
+    "KeySchema": [
+      {
+        "AttributeName": "flight_id",
+        "KeyType": "HASH"
+      }
+    ],
+    "AttributeDefinitions": [
+      {
+        "AttributeName": "flight_id",
+        "AttributeType": "S"
+      }
+    ],
+    "ProvisionedThroughput": {
+      "ReadCapacityUnits": 5,
+      "WriteCapacityUnits": 5
+    }
+  }
+  

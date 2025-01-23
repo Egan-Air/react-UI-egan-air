@@ -1,0 +1,40 @@
+{
+    "Table": {
+        "AttributeDefinitions": [
+            {
+                "AttributeName": "departure_time",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "flight_id",
+                "AttributeType": "S"
+            }
+        ],
+        "TableName": "FlightSchedules",
+        "KeySchema": [
+            {
+                "AttributeName": "flight_id",
+                "KeyType": "HASH"
+            },
+            {
+                "AttributeName": "departure_time",
+                "KeyType": "RANGE"
+            }
+        ],
+        "TableStatus": "ACTIVE",
+        "CreationDateTime": "2024-12-29T01:51:44.723000-05:00",
+        "ProvisionedThroughput": {
+            "NumberOfDecreasesToday": 0,
+            "ReadCapacityUnits": 0,
+            "WriteCapacityUnits": 0
+        },
+        "TableSizeBytes": 1606,
+        "ItemCount": 18,
+        "TableArn": "arn:aws:dynamodb:us-east-1:727796463450:table/FlightSchedules",
+        "TableId": "1bf1de4f-9972-4337-b60b-20caf20e3640",
+        "BillingModeSummary": {
+            "BillingMode": "PAY_PER_REQUEST",
+            "LastUpdateToPayPerRequestDateTime": "2024-12-29T01:51:44.723000-05:00"
+        }
+    }
+}

@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 
-const ArrivalsTile = () => {
-  const [arrivals, setArrivals] = useState([]);
+const InFlightTile = () => {
+  const [inflight, setinflight] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   // Replace with your actual REST API endpoint
-  const apiEndpoint = 'http://localhost:8082/arrivals';
+  const apiEndpoint = 'http://localhost:8083/in-flight';
 
   useEffect(() => {
-    const fetchArrivals = async () => {
+    const fetchinflight = async () => {
       try {
         const response = await fetch(apiEndpoint);
         if (!response.ok) {
@@ -22,18 +22,19 @@ const ArrivalsTile = () => {
 
         // Transform the data for easier rendering
         const transformedData = data
-          .filter((flight) => new Date(flight.arrival_time) > currentTime) // Filter future arrivals
+          .filter((flight) => new Date(flight.arrival_time) > currentTime) // Filter future inflight
           .map((flight, index) => ({
             id: index,
             flight: flight.flight_id,
+            origin: flight.origin,
+            destination: flight.destination,
             time: new Date(flight.arrival_time).toLocaleTimeString([], {
               hour: '2-digit',
               minute: '2-digit',
             }),
-            origin: flight.origin,
             status: flight.status,
           }));
-        setArrivals(transformedData);
+        setinflight(transformedData);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -41,19 +42,19 @@ const ArrivalsTile = () => {
       }
     };
 
-    fetchArrivals();
+    fetchinflight();
   }, []);
 
   return (
     <div style={styles.tile}>
-      <h3>Upcoming SDF Arrivals</h3>
+      <h3>Egan Air In-Flight</h3>
       {loading && <p>Loading...</p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}
       {!loading && !error && (
         <ul>
-          {arrivals.map((arrival) => (
-            <li key={arrival.id}>
-              Flight {arrival.flight} from {arrival.origin} - {arrival.time} - {arrival.status}
+          {inflight.map((inflight) => (
+            <li key={inflight.id}>
+              Flight {inflight.flight} from {inflight.origin} to {inflight.destination} - {inflight.time} - {inflight.status}
             </li>
           ))}
         </ul>
@@ -72,4 +73,4 @@ const styles = {
   },
 };
 
-export default ArrivalsTile;
+export default InFlightTile;
