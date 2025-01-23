@@ -53,7 +53,7 @@ const DeparturesTile = () => {
         <ul>
           {departures.map((departure) => (
             <li key={departure.id}>
-              Flight {departure.flight} to {departure.destination} - {departure.time} - {departure.status}
+               {departure.flight} to {departure.destination} - {departure.time} - {departure.status}
             </li>
           ))}
         </ul>

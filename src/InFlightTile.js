@@ -54,7 +54,7 @@ const InFlightTile = () => {
         <ul>
           {inflight.map((inflight) => (
             <li key={inflight.id}>
-              Flight {inflight.flight} from {inflight.origin} to {inflight.destination} - {inflight.time} - {inflight.status}
+               {inflight.flight} from {inflight.origin} to {inflight.destination} arriving {inflight.time} - {inflight.status}
             </li>
           ))}
         </ul>

@@ -14,7 +14,14 @@ const TopNavBar = () => {
 
   return (
     <div style={styles.navbar}>
-      <div style={styles.logo}>Egan Air (Louisville -SDF)</div>
+      <div style={styles.logoContainer}>
+        <img
+          src="logo.png"
+          alt="Egan Air"
+          style={styles.logo}
+        />
+        <span>Egan Air (Louisville - SDF)</span>
+      </div>
       <div style={styles.dateTime}>
         {currentTime.toLocaleDateString()} {currentTime.toLocaleTimeString()}
       </div>
@@ -28,11 +35,39 @@ const TopNavBar = () => {
 };
 
 const styles = {
-  navbar: { display: 'flex', justifyContent: 'space-between', padding: '10px 20px', background: '#282c34', color: '#fff' },
-  logo: { fontSize: '20px', fontWeight: 'bold' },
-  dateTime: { fontSize: '16px', fontWeight: 'normal', textAlign: 'center', flex: 1 },
-  links: { display: 'flex', gap: '15px' },
-  link: { color: '#61dafb', textDecoration: 'none' },
+  navbar: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '10px 20px',
+    background: '#282c34',
+    color: '#fff',
+  },
+  logoContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '10px',
+    fontSize: '20px',
+    fontWeight: 'bold',
+  },
+  logo: {
+    height: '50px', 
+    width: 'auto',
+  },
+  dateTime: {
+    fontSize: '16px',
+    fontWeight: 'normal',
+    textAlign: 'center',
+    flex: 1,
+  },
+  links: {
+    display: 'flex',
+    gap: '15px',
+  },
+  link: {
+    color: '#61dafb',
+    textDecoration: 'none',
+  },
 };
 
 export default TopNavBar;
