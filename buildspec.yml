@@ -3,6 +3,11 @@ version: 0.2
 phases:
   pre_build:
     commands:
+      - echo "Retrieving Docker credentials from Secrets Manager..."
+      - export DOCKER_USERNAME=$(aws secretsmanager get-secret-value --secret-id docker-hub-token --query 'SecretString' --output text | jq -r '.DOCKER_USERNAME')
+      - export DOCKER_PASSWORD=$(aws secretsmanager get-secret-value --secret-id docker-hub-token --query 'SecretString' --output text | jq -r '.DOCKER_TOKEN')
+      - echo "Logging in to Docker Hub..."
+      - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com
   build:
