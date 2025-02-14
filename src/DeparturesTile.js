@@ -6,7 +6,8 @@ const DeparturesTile = () => {
   const [error, setError] = useState(null);
 
   // Replace with your actual REST API endpoint
-  const apiEndpoint = 'http://departures-service:8081/flights';
+//  const apiEndpoint = 'http://departures-service:8081/flights';
+  const apiEndpoint = 'http://departures-service-egan-air.apps-crc.testing/flights'; //for CRC
 
   useEffect(() => {
     const fetchDepartures = async () => {
