@@ -6,7 +6,7 @@ const DeparturesTile = () => {
   const [error, setError] = useState(null);
 
   // Replace with your actual REST API endpoint
-  const apiEndpoint = 'http://localhost:8081/flights';
+  const apiEndpoint = 'http://departures-service:8081/flights';
 
   useEffect(() => {
     const fetchDepartures = async () => {
