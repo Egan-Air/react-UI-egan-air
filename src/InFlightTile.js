@@ -6,7 +6,8 @@ const InFlightTile = () => {
   const [error, setError] = useState(null);
 
   // Replace with your actual REST API endpoint
-  const apiEndpoint = 'http://localhost:8083/in-flight';
+ // const apiEndpoint = 'http://localhost:8083/in-flight';
+  const apiEndpoint = 'http://in-flight-service-egan-air.apps-crc.testing/in-flight';
 
   useEffect(() => {
     const fetchinflight = async () => {
